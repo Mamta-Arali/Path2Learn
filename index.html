@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path2Learn</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="cursor"></div>
+
+<header>
+    <nav class="navbar">
+
+    <div class="logo">
+        Path2Learn
+    </div>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#features">Features</a></li>
+
+        <li><a href="#dashboard">Dashboard</a></li>
+
+        <li><a href="#donate">Donate</a></li>
+
+        <a href="admin.html">Admin Panel</a>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+    <button class="glow-btn">
+        Login
+    </button>
+
+</nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h2>Creating Pathways To Brighter Futures</h2>
+        <p>
+            A futuristic platform connecting donors with learners through technology, transparency, and impact.
+        </p>
+
+        <div class="hero-buttons">
+            <button class="primary-btn">Donate Now</button>
+            <button class="secondary-btn">Explore</button>
+        </div>
+    </div>
+
+    <div class="floating-card glass">
+        <h2>Live Donations</h2>
+        <h1 id="liveCounter">0</h1>
+        <p>Resources Distributed</p>
+    </div>
+</section>
+
+<section id="dynamicSection"
+class="dynamic-section glass">
+
+    <div id="dynamicContent">
+
+        <h1>
+            Welcome to Path2Learn
+        </h1>
+
+        <p>
+            Interactive dashboards and
+            management systems will
+            appear here.
+        </p>
+
+    </div>
+
+</section>
+<section class="dashboard-chart glass">
+
+    <h2>
+        Donation Analytics
+    </h2>
+
+    <canvas id="myChart"></canvas>
+
+</section>
+<section class="features" id="features">
+    <h1 class="section-title">Core Modules</h1>
+
+    <div class="cards">
+
+        <div class="card glass">
+            <h2>User Management</h2>
+            <p>Secure login, registration, role-based authentication and profile management.</p>
+            <button>Open Module</button>
+        </div>
+
+        <div class="card glass">
+            <h2>Donation Management</h2>
+            <p>Track donations, upload resources, approve items, and manage inventory.</p>
+            <button>Open Module</button>
+        </div>
+
+        <div class="card glass">
+            <h2>Dashboard Analytics</h2>
+            <p>Interactive analytics with graphs, charts, statistics and reports.</p>
+            <button>Open Module</button>
+        </div>
+
+        <div class="card glass">
+            <h2>Admin Panel</h2>
+            <p>Manage users, donations, approvals and monitor activities.</p>
+            <button>Open Module</button>
+        </div>
+
+        <div class="card glass">
+            <h2>Categories & Stock</h2>
+            <p>Automatic categorization and real-time inventory management system.</p>
+            <button>Open Module</button>
+        </div>
+
+       
+
+    </div>
+</section>
+
+<section class="dashboard-row">
+
+    <!-- LEFT SIDE -->
+    <div class="card glass stats-box">
+
+        <h2>Dashboard Analytics</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>5K+</h2>
+                <p>Users</p>
+            </div>
+
+            <div class="card">
+                <h2>12K+</h2>
+                <p>Donations</p>
+            </div>
+
+            <div class="card">
+                <h2>9K+</h2>
+                <p>Distributed</p>
+            </div>
+
+            <div class="card">
+                <h2>95%</h2>
+                <p>Transparency</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE (GRAPH HERE ONLY) -->
+    <div class="card glass graph-box">
+
+        <h2>Analytics Graph</h2>
+
+        <canvas id="analyticsChart"></canvas>
+
+    </div>
+
+</section>
+
+<section class="donation-section" id="donation">
+
+    <div class="donation-form glass">
+  <h2>Donate Educational Resources</h2>
+
+  <input type="text" id="name" placeholder="Donor Name">
+  <input type="email" id="email" placeholder="Email">
+
+  <select id="category">
+      <option>Select Category</option>
+      <option>Books</option>
+      <option>Laptops</option>
+      <option>Stationery</option>
+      <option>Devices</option>
+  </select>
+
+  <textarea id="details" placeholder="Donation Details"></textarea>
+
+  <input type="number" id="quantity" placeholder="Quantity">
+  <button type="button" onclick="submitDonation()">Submit</button>
+  
+
+</div>
+
+    <div class="inventory glass">
+        <h2>Inventory Tracking</h2>
+
+        <div class="inventory-item">
+            <span>Books</span>
+            <div class="bar"><div class="fill fill1"></div></div>
+        </div>
+
+        <div class="inventory-item">
+            <span>Laptops</span>
+            <div class="bar"><div class="fill fill2"></div></div>
+        </div>
+
+        <div class="inventory-item">
+            <span>Stationery</span>
+            <div class="bar"><div class="fill fill3"></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="admin">
+
+    <h1>
+        Admin Control Center
+    </h1>
+
+    <div class="admin-grid">
+
+        <div class="card glass">
+
+            <h2>
+                Pending Approvals
+            </h2>
+
+            <p>
+                Manage donation approvals.
+            </p>
+
+            <button id="approveBtn"
+            class="primary-btn">
+
+                Approve
+
+            </button>
+
+        </div>
+
+        <div class="card glass">
+
+            <h2>
+                User Management
+            </h2>
+
+            <p>
+                Block, delete and manage users.
+            </p>
+
+            <button id="manageBtn"
+            class="primary-btn">
+
+                Manage
+
+            </button>
+
+        </div>
+
+        <div class="card glass">
+
+            <h2>
+                Reports
+            </h2>
+
+            <p>
+                Generate reports and analytics.
+            </p>
+
+            <button id="generateBtn"
+            class="primary-btn">
+
+                Generate
+
+            </button>
+
+        </div>
+
+        <div class="card glass">
+
+            <h2>
+                Notifications
+            </h2>
+
+            <p>
+                Send announcements and alerts.
+            </p>
+
+            <button id="sendBtn"
+            class="primary-btn">
+
+                Send
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer id="contact">
+    <h1>Path2Learn</h1>
+    <p>Empowering Education Through Technology</p>
+
+    <div class="socials">
+        <span>Instagram</span>
+        <span>LinkedIn</span>
+        <span>GitHub</span>
+    </div>
+</footer>
+
+<div id="modal" class="modal">
+
+    <div class="modal-box glass">
+
+        <span class="close-btn" onclick="closeModal()">
+            ×
+        </span>
+
+        <div id="modalContent"></div>
+
+    </div>
+
+</div>
+<!-- LOGIN MODAL -->
+
+<div id="authModal" class="auth-modal">
+
+    <div class="auth-box glass">
+
+        <span id="closeAuth">
+            ×
+        </span>
+
+        <div id="authContent"></div>
+
+    </div>
+
+</div>
+<!-- AUTH MODAL -->
+
+<div id="authModal"
+class="auth-modal">
+
+    <div class="auth-box glass">
+
+        <span id="closeAuth">
+            ×
+        </span>
+
+        <div id="authContent"></div>
+
+    </div>
+
+</div>
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
